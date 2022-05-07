@@ -18,7 +18,12 @@
 
   <div *ngIf="folder != 'Home'">
     <ion-card *ngFor="let entry of thisContent">
-      <img *ngFor="let image of entry.images" [src]="image" />
+      <div class="ion-text-center">
+        <img
+          *ngFor="let image of entry.images"
+          [src]="'/assets/content-images/' + image"
+        />
+      </div>
 
       <ion-card-header>
         <ion-item *ngIf="entry.githubUrl" [href]="entry.githubUrl" detail>

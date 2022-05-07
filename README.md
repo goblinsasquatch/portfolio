@@ -36,10 +36,10 @@
 ## Raspberry Pi
 
 - [x] AES Project
-- [x] Octoprint
 
 ## Other tech Skills
 
-- [x] design examples
+- [x] Octoprint
+- [x] 3D design examples
 - [ ] Agile project management
 - [ ] User Centred Design
