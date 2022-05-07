@@ -6,13 +6,38 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   public appPages = [
-    { title: 'Inbox', url: '/folder/Inbox', icon: 'mail' },
-    { title: 'Outbox', url: '/folder/Outbox', icon: 'paper-plane' },
-    { title: 'Favorites', url: '/folder/Favorites', icon: 'heart' },
-    { title: 'Archived', url: '/folder/Archived', icon: 'archive' },
-    { title: 'Trash', url: '/folder/Trash', icon: 'trash' },
-    { title: 'Spam', url: '/folder/Spam', icon: 'warning' },
+    { title: 'Home', url: '/folder/Home', icon: 'home-outline' },
+    {
+      title: 'Full Stack Web-Dev',
+      url: '/folder/Full Stack Web-Dev',
+      icon: 'globe-outline',
+    },
+    { title: 'Python', url: '/folder/Python', icon: 'logo-python' },
+    {
+      title: 'Machine Learning',
+      url: '/folder/Machine Learning',
+      icon: 'bulb-outline',
+    },
+    {
+      title: 'Natural Language Processing',
+      url: '/folder/Natural Language Processing',
+      icon: 'chatbubbles-outline',
+    },
+    {
+      title: 'Palantir Foundry - PySpark',
+      url: '/folder/Palantir Foundry - PySpark',
+      icon: 'hammer-outline',
+    },
+    {
+      title: 'Raspberry Pi',
+      url: '/folder/Raspberry Pi',
+      icon: 'assets/icon/raspberry-pi-icon.png',
+    },
+    {
+      title: 'Other Tech Skills',
+      url: '/folder/Other Tech Skills',
+      icon: 'add-outline',
+    },
   ];
-  public labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
   constructor() {}
 }

@@ -11,18 +11,7 @@ ion-menu-button {
   transform: translateY(-50%);
 }
 
-#container strong {
-  font-size: 20px;
-  line-height: 26px;
-}
+.background {
+  --background: url("/assets/python-coding.jpg") 0 0/100% 100% no-repeat
+ }
 
-#container p {
-  font-size: 16px;
-  line-height: 22px;
-  color: #8c8c8c;
-  margin: 0;
-}
-
-#container a {
-  text-decoration: none;
-}
