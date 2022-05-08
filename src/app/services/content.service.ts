@@ -14,11 +14,11 @@ export class ContentService {
       techUsed: ['Angular', 'Ionic', 'Capacitor Native Services'],
       githubUrl: 'https://github.com/goblinsasquatch/MilAR-Phys-Eqpt-Survey',
       images: [
-        '1-web/milar1.png',
-        '1-web/milar2.png',
-        '1-web/milar3.png',
-        '1-web/milar4.png',
-        '1-web/milar5.png',
+        '1-web/milar-a.png',
+        '1-web/milar-b.png',
+        // '1-web/milar3.png',
+        // '1-web/milar4.png',
+        // '1-web/milar5.png',
       ],
     },
     {
