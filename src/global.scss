@@ -24,3 +24,17 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+
+.modal-fullscreen {
+  --min-width: 80%;
+}
+
+.bg-dark {
+  --ion-background-color: var(--ion-color-dark);
+  --ion-text-color: var(--ion-color-dark-contrast);
+
+  ion-list {
+    /* optional, but it needs when you use gradient as a background color.*/
+    background: transparent;
+  }
+}

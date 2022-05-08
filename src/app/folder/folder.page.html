@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
+  <ion-toolbar color="primary">
     <ion-buttons slot="start">
-      <ion-menu-button></ion-menu-button>
+      <ion-menu-button color="light"></ion-menu-button>
     </ion-buttons>
     <ion-title>{{ folder }}</ion-title>
   </ion-toolbar>
@@ -13,44 +13,67 @@
       <ion-title size="large">{{ folder }}</ion-title>
     </ion-toolbar>
   </ion-header>
+  <!-- display background image if on home page -->
   <ion-content *ngIf="folder == 'Home'" fullscreen="true" class="background">
   </ion-content>
 
+  <!-- display content if not on home page -->
   <div *ngIf="folder != 'Home'">
     <ion-card *ngFor="let entry of thisContent">
-      <div class="ion-text-center">
-        <ion-img
-          *ngFor="let image of entry.images"
-          [src]="'/assets/content-images/' + image"
-        ></ion-img>
-      </div>
+      <ion-grid fixed>
+        <ion-row>
+          <ion-col sizeMd="6" sizeXs="12">
+            <ion-card>
+              <!-- content title and github link (if available) -->
+              <ion-card-header>
+                <ion-item
+                  *ngIf="entry.githubUrl"
+                  [href]="entry.githubUrl"
+                  detail
+                >
+                  <ion-icon
+                    slot="end"
+                    name="logo-github"
+                    size="large"
+                  ></ion-icon>
+                  <h1>{{entry.title}}</h1>
+                </ion-item>
+                <ion-item *ngIf="!entry.githubUrl">
+                  <h1>{{entry.title}}</h1>
+                </ion-item>
+              </ion-card-header>
 
-      <ion-card-header>
-        <ion-item *ngIf="entry.githubUrl" [href]="entry.githubUrl" detail>
-          <ion-icon slot="end" name="logo-github" size="large"></ion-icon>
-          <ion-label> {{entry.title}} </ion-label>
-        </ion-item>
-        <ion-item *ngIf="!entry.githubUrl">
-          <ion-label> {{entry.title}} </ion-label>
-        </ion-item>
-      </ion-card-header>
+              <!-- content description and details -->
 
-      <ion-card>
-        <ion-card-header>
-          <ion-card-subtitle><h2>Description</h2></ion-card-subtitle>
-        </ion-card-header>
-        <ion-card-content> {{entry.description}} </ion-card-content>
-        <ion-card-header>
-          <ion-card-subtitle
-            ><h3>Technology and techniques</h3></ion-card-subtitle
-          >
-        </ion-card-header>
-        <ion-card-content>
-          <ul>
-            <li *ngFor="let tech of entry.techUsed">{{tech}}</li>
-          </ul>
-        </ion-card-content>
-      </ion-card>
+              <ion-card>
+                <ion-card-header>
+                  <ion-card-subtitle><h4>Description</h4></ion-card-subtitle>
+                </ion-card-header>
+                <ion-card-content> {{entry.description}} </ion-card-content>
+                <ion-card-header>
+                  <ion-card-subtitle
+                    ><h4>Technology and techniques</h4></ion-card-subtitle
+                  >
+                </ion-card-header>
+                <ion-card-content>
+                  <ul>
+                    <li *ngFor="let tech of entry.techUsed">{{tech}}</li>
+                  </ul>
+                </ion-card-content>
+              </ion-card>
+            </ion-card>
+          </ion-col>
+          <ion-col sizeMd="6" sizeXs="12">
+            <ion-card>
+              <ion-img
+                *ngFor="let image of entry.images"
+                [src]="'/assets/content-images/' + image"
+                (click)="onImageClick(image)"
+              ></ion-img>
+            </ion-card>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
     </ion-card>
   </div>
 </ion-content>
