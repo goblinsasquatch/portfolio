@@ -19,15 +19,15 @@
   <div *ngIf="folder != 'Home'">
     <ion-card *ngFor="let entry of thisContent">
       <div class="ion-text-center">
-        <img
+        <ion-img
           *ngFor="let image of entry.images"
           [src]="'/assets/content-images/' + image"
-        />
+        ></ion-img>
       </div>
 
       <ion-card-header>
         <ion-item *ngIf="entry.githubUrl" [href]="entry.githubUrl" detail>
-          <ion-icon slot="end" name="logo-github"></ion-icon>
+          <ion-icon slot="end" name="logo-github" size="large"></ion-icon>
           <ion-label> {{entry.title}} </ion-label>
         </ion-item>
         <ion-item *ngIf="!entry.githubUrl">
@@ -37,15 +37,19 @@
 
       <ion-card>
         <ion-card-header>
-          <ion-card-subtitle>Description</ion-card-subtitle>
+          <ion-card-subtitle><h2>Description</h2></ion-card-subtitle>
         </ion-card-header>
         <ion-card-content> {{entry.description}} </ion-card-content>
-      </ion-card>
-      <ion-card>
         <ion-card-header>
-          <ion-card-subtitle>Lessons Learned</ion-card-subtitle>
+          <ion-card-subtitle
+            ><h3>Technology and techniques</h3></ion-card-subtitle
+          >
         </ion-card-header>
-        <ion-card-content> {{entry.lessonsLearned}} </ion-card-content>
+        <ion-card-content>
+          <ul>
+            <li *ngFor="let tech of entry.techUsed">{{tech}}</li>
+          </ul>
+        </ion-card-content>
       </ion-card>
     </ion-card>
   </div>

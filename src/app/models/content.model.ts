@@ -3,6 +3,6 @@ export interface Content {
   images?: string[];
   title: string;
   description: string;
-  lessonsLearned: string;
+  techUsed: string[];
   githubUrl?: string;
 }
