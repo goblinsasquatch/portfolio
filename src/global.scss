@@ -29,12 +29,12 @@
   --min-width: 80%;
 }
 
-.bg-dark {
-  --ion-background-color: var(--ion-color-dark);
-  --ion-text-color: var(--ion-color-dark-contrast);
+// .bg-dark {
+//   --ion-background-color: var(--ion-color-dark);
+//   --ion-text-color: var(--ion-color-dark-contrast);
 
-  ion-list {
-    /* optional, but it needs when you use gradient as a background color.*/
-    background: transparent;
-  }
-}
+//   ion-list {
+//     /* optional, but it needs when you use gradient as a background color.*/
+//     background: transparent;
+//   }
+// }

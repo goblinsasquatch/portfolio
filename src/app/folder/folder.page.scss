@@ -11,8 +11,11 @@ ion-menu-button {
   transform: translateY(-50%);
 }
 
-.background {
-  --background: url("/assets/python-coding.jpg") 0 0/100% 100% no-repeat
- }
+// .background {
+//   --background: url("/assets/python-coding.jpg") 0 0/100% 100% no-repeat
+//  }
 
-
+.github-button {
+  float: right;
+  margin-bottom: 10px;
+}
