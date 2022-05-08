@@ -15,7 +15,36 @@
   </ion-header>
   <!-- display home page -->
   <ion-content *ngIf="folder == 'Home'" fullscreen="true">
-    this is the home page
+    <ion-grid fixed>
+      <ion-row>
+        <ion-col sizeMd="6" sizeXs="10" offsetMd="3" offsetXs="1">
+          <div class="ion-text-center">
+            <ion-card>
+              <ion-card-header>
+                <ion-card-subtitle>Daniel Baggs</ion-card-subtitle>
+                <ion-card-title>Software Developer</ion-card-title>
+              </ion-card-header>
+            </ion-card>
+            <ion-card>
+              <ion-card-content>
+                <ion-button
+                  href="https://github.com/goblinsasquatch?tab=repositories"
+                  size="large"
+                  shape="round"
+                >
+                  <ion-icon
+                    slot="start"
+                    name="logo-github"
+                    size="large"
+                  ></ion-icon>
+                  Github
+                </ion-button>
+              </ion-card-content>
+            </ion-card>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
   </ion-content>
 
   <!-- display content if not on home page -->
@@ -26,20 +55,16 @@
           <ion-card>
             <ion-card-header>
               <ion-card-title>{{entry.title}}</ion-card-title>
-              <ion-card-subtitle
-                ><strong>Description</strong></ion-card-subtitle
-              >
             </ion-card-header>
             <ion-card-content> {{entry.description}} </ion-card-content>
-            <ion-card-header>
-              <ion-card-subtitle
-                ><strong>Technology and techniques</strong></ion-card-subtitle
-              >
-            </ion-card-header>
+            <ion-card-header> </ion-card-header>
             <ion-card-content>
-              <ul>
-                <li *ngFor="let tech of entry.techUsed">{{tech}}</li>
-              </ul>
+              <ion-list>
+                <ion-list-header>Technology and techniques</ion-list-header>
+                <ion-item *ngFor="let tech of entry.techUsed"
+                  ><ion-label>{{tech}}</ion-label></ion-item
+                >
+              </ion-list>
               <ion-button
                 *ngIf="entry.githubUrl"
                 [href]="entry.githubUrl"
