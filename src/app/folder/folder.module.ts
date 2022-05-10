@@ -8,9 +8,10 @@ import { FolderPageRoutingModule } from './folder-routing.module';
 
 import { FolderPage } from './folder.page';
 import { ImagemodalComponent } from './imagemodal/imagemodal.component';
+import { PdpComponent } from './pdp/pdp.component';
 
 @NgModule({
   imports: [CommonModule, FormsModule, IonicModule, FolderPageRoutingModule],
-  declarations: [FolderPage, ImagemodalComponent],
+  declarations: [FolderPage, ImagemodalComponent, PdpComponent],
 })
 export class FolderPageModule {}
