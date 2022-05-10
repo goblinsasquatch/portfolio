@@ -1,10 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { MenuController } from '@ionic/angular';
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
   styleUrls: ['app.component.scss'],
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   public appPages = [
     { title: 'Home', url: '/folder/Home', icon: 'home-outline' },
     {
@@ -39,5 +40,9 @@ export class AppComponent {
       icon: 'add-outline',
     },
   ];
-  constructor() {}
+  constructor(private menu: MenuController) {}
+
+  ngOnInit() {
+    this.menu.open();
+  }
 }
