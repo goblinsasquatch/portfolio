@@ -3,5 +3,8 @@
     [src]="'/assets/content-images/' + image"
     (click)="onClose()"
   ></ion-img>
-  <!-- <ion-button (click)="onClose()" size="large"> Close </ion-button> -->
+  <ion-button (click)="onClose()" size="large" expand="block"
+    ><ion-icon slot="icon-only" name="close-outline"></ion-icon>
+    Close
+  </ion-button>
 </ion-card>
