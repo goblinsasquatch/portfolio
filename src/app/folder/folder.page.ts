@@ -22,18 +22,18 @@ export class FolderPage implements OnInit {
 
   ngOnInit() {
     this.folder = this.activatedRoute.snapshot.paramMap.get('id');
-    this.thisContent = this.contentService.getContent(this.folder);
+    // this.thisContent = this.contentService.getContent(this.folder);
   }
 
-  onImageClick(image: string) {
-    this.modalCtrl
-      .create({
-        component: ImagemodalComponent,
-        componentProps: { image: image },
-        cssClass: 'modal-fullscreen',
-      })
-      .then((modalEl) => {
-        modalEl.present();
-      });
-  }
+  // onImageClick(image: string) {
+  //   this.modalCtrl
+  //     .create({
+  //       component: ImagemodalComponent,
+  //       componentProps: { image: image },
+  //       cssClass: 'modal-fullscreen',
+  //     })
+  //     .then((modalEl) => {
+  //       modalEl.present();
+  //     });
+  // }
 }
